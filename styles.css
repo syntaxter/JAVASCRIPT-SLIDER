@@ -6,7 +6,6 @@
 
 body {
   height: 100vh;
-  background-color: rgb(238, 238, 238);
 }
 
 .contenedor {
@@ -15,6 +14,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(238, 238, 238);
+  overflow-x: hidden;
 }
 
 .contenedor-servicios {
@@ -77,4 +78,39 @@ a#clicBack {
 
 #imagen2 {
   display: none;
+}
+#indicador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 200px;
+}
+
+span {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+  border-bottom: none;
+  border-right: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/*los indicadores*/
+span[data-test="true"] {
+  width: 25px;
+  height: 25px;
+  transition: 0.4s;
+  border: 2px solid black;
+  background-color: black;
+}
+
+span[data-test="false"] {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  transition: 0.4s;
 }
