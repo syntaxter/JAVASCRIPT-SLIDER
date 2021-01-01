@@ -76,12 +76,12 @@ function pasar() {
 
 //animacion imagenes
     gsap.to(imagen, {opacity:0,x:200,display:"none",duration:0.5})
-    gsap.fromTo(imagen, {x:-500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1.5})
+    gsap.fromTo(imagen, {x:-500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1})
     //gsap.to(imagen, {opacity:0,x:-200,display:"none",duration:1})
     //gsap.fromTo(imagen2, {x:500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1,delay:1})
 
     //animacion de titulos//
-    gsap.fromTo(titulos, {x:-500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:2})
+    gsap.fromTo(titulos, {x:-500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1.2})
 }
 
 function retroceder() {
@@ -91,10 +91,10 @@ function retroceder() {
      .to(botonBack, {duration: 0.3, x: 0})
 
     gsap.to(imagen, {opacity:0,x:-200,display:"none",duration:1})
-    gsap.fromTo(imagen, {x:500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1,delay:1})
+    gsap.fromTo(imagen, {x:500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1})
 
     //textos
-    gsap.fromTo(titulos, {x:500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1,delay:1.2})
+    gsap.fromTo(titulos, {x:500,display:"none",opacity:0}, {x:0,opacity:1,display:"block",ease:"sine",duration:1.2})
 
 
     //gsap.to(imagen, {opacity:0,x:200,display:"none",duration:1})
@@ -129,7 +129,7 @@ function changeText(i) {
 
 
 
-//cambia estilos de posicion
+//cambia estilos de posicion de forma manual
 
 var span1 = document.getElementById(0);
 var span2 = document.getElementById(1);
@@ -142,6 +142,8 @@ span2.addEventListener("click",spansLs)
 span3.addEventListener("click",spansLs)
 span4.addEventListener("click",spansLs)
 
+
+//ESTA FUNCION NECESITO SIMPLIFICARLA, CON UN LISTENER QUE PERMITA QUE AL DAR CLIC RECONOZCA EN QUE ELEMENTO SE DIO CLIC.
 function spansLs() {
     var indicador = this.id;
     switch(indicador) {
@@ -152,6 +154,8 @@ function spansLs() {
         span4.dataset.test= "false";
         i=0
         retroceder();
+        changeText(i)
+
         console.log(indicador);
         break;
 
@@ -162,6 +166,8 @@ function spansLs() {
         span4.dataset.test= "false";
         i=1
         retroceder();
+        changeText(i)
+
         break;
 
         case "2": 
@@ -172,6 +178,8 @@ function spansLs() {
         console.log(indicador);
         i=2;
         retroceder();
+        changeText(i)
+
         break;
 
         case "3":
@@ -181,6 +189,8 @@ function spansLs() {
         span4.dataset.test= "true";
         console.log(indicador);
         retroceder();
+        changeText(i)
+
         i=3
         break;
         
